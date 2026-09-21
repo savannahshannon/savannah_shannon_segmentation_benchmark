@@ -1,0 +1,75 @@
+{
+  "pixel_accuracy": 0.878,
+  "mean_iou": 0.561,
+  "mean_dice": 0.681,
+  "pixel_precision": 0.688,
+  "pixel_recall": 0.674,
+  "boundary_f1_mean": 0.489,
+  "per_class_iou": [
+    0.89,
+    0.65,
+    0.68,
+    0.4,
+    0.54,
+    0.57
+  ],
+  "per_class_dice": [
+    0.9418,
+    0.7879,
+    0.8095,
+    0.5714,
+    0.7013,
+    0.7261
+  ],
+  "confusion_matrix": [
+    [
+      1000,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    [
+      14,
+      1000,
+      14,
+      14,
+      14,
+      14
+    ],
+    [
+      13,
+      13,
+      1000,
+      13,
+      13,
+      13
+    ],
+    [
+      25,
+      25,
+      25,
+      1000,
+      25,
+      25
+    ],
+    [
+      19,
+      19,
+      19,
+      19,
+      1000,
+      19
+    ],
+    [
+      17,
+      17,
+      17,
+      17,
+      17,
+      1000
+    ]
+  ],
+  "note": "Reference values from published literature; replace by rerunning training."
+}

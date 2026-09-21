@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+scikit-image>=0.21
+matplotlib>=3.7
+pillow>=10.0
+opencv-python>=4.8
+pyyaml>=6.0
+tqdm>=4.66
+
+# Deep learning
+torch>=2.0
+torchvision>=0.15
+
+# Transformer segmentation
+transformers>=4.35
+
+# Instance segmentation - YOLO
+ultralytics>=8.1
+
+# COCO evaluation
+pycocotools>=2.0.7
+
+# Optional (report generation)
+python-docx>=1.1

@@ -1,0 +1,102 @@
+# Segmentation Benchmark - Master Configuration
+# All models share this configuration where feasible. Model-specific overrides
+# are documented in results/<model>/config_used.yaml after each run.
+
+experiment:
+  name: "coco_seg_benchmark_v1"
+  seed: 42
+  device: "auto"          # "auto" -> cuda if available, else cpu
+  mixed_precision: true   # AMP when on CUDA
+  deterministic: false    # deterministic algorithms slow training substantially
+
+dataset:
+  name: "coco2017_subset"
+  root: "./data/coco"
+  annotations_root: "./annotations"
+  # 5 foreground classes + background
+  classes:
+    - background
+    - person
+    - car
+    - bicycle
+    - dog
+    - cat
+  # Split targets. Actual counts written to annotations/split_manifest.json.
+  target_train: 5000
+  target_val: 1000
+  target_test: 1000
+  # For rapid smoke tests set these to small values.
+  smoke_test:
+    enabled: false
+    train: 200
+    val: 40
+    test: 40
+  ignore_index: 255       # crowd/overlap-resolution pixels
+
+preprocessing:
+  input_size: [512, 512]           # use [256, 256] for compute-limited environments
+  normalize_mean: [0.485, 0.456, 0.406]  # ImageNet stats
+  normalize_std: [0.229, 0.224, 0.225]
+  # Mask-safe geometric augmentations. Color jitter is image-only.
+  augmentation:
+    horizontal_flip: 0.5
+    rotation_degrees: 10
+    random_scale: [0.75, 1.25]
+    color_jitter:
+      brightness: 0.2
+      contrast: 0.2
+      saturation: 0.2
+      hue: 0.05
+
+training:
+  epochs: 25
+  batch_size: 8
+  optimizer: "adamw"
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  scheduler: "cosine"
+  warmup_epochs: 1
+  loss:
+    ce_weight: 0.5
+    dice_weight: 0.5
+  early_stop_patience: 8
+  checkpoint_metric: "val_miou"
+
+evaluation:
+  boundary_tolerance_pixels: 2
+  # Per-class IoU: background is reported separately AND included in mIoU.
+  # Set to false to compute mIoU over foreground only.
+  include_background_in_miou: true
+  # Number of images used for inference latency measurement.
+  latency_images: 100
+  latency_warmup_iters: 10
+  latency_batch_size: 1
+
+instance:
+  # Mask R-CNN training and evaluation config.
+  score_threshold: 0.05
+  nms_iou_threshold: 0.5
+  max_detections: 100
+  # COCO-style AP threshold sweep 0.50:0.95:0.05
+  ap_iou_thresholds: [0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+
+output:
+  results_dir: "./results"
+  plots_dir: "./plots"
+  predictions_dir: "./predictions"
+  checkpoints_dir: "./checkpoints"
+  logs_dir: "./logs"
+  confusion_matrices_dir: "./confusion_matrices"
+
+# Enable/disable specific models per run. Overridden by CLI --model flag.
+models:
+  kmeans:       {enabled: true,  task: traditional}
+  fcn:          {enabled: true,  task: semantic, backbone: resnet50, pretrained: true}
+  unet:         {enabled: true,  task: semantic, encoder_channels: [64,128,256,512]}
+  unetpp:       {enabled: true,  task: semantic, encoder_channels: [64,128,256,512], deep_supervision: false}
+  segnet:       {enabled: true,  task: semantic}
+  deeplabv3:    {enabled: true,  task: semantic, backbone: resnet50, pretrained: true}
+  pspnet:       {enabled: true,  task: semantic, backbone: resnet50, pretrained: true}
+  segformer:    {enabled: true,  task: semantic, variant: "nvidia/mit-b0"}
+  maskrcnn:     {enabled: true,  task: instance, backbone: resnet50_fpn, pretrained: true}
+  yolo_seg:     {enabled: true,  task: instance, variant: "yolov8n-seg.pt"}

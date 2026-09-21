@@ -1,0 +1,8 @@
+{
+  "mask_AP": 0.348,
+  "mask_AP50": 0.591,
+  "mask_AP75": 0.372,
+  "mask_AR": 0.463,
+  "box_AP": 0.398,
+  "note": "Reference values from published literature; replace by rerunning training."
+}

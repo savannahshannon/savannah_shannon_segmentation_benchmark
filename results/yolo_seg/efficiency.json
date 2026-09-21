@@ -1,0 +1,18 @@
+{
+  "method": "yolo_seg",
+  "task": "instance",
+  "total_params": 3405434,
+  "trainable_params": 3405434,
+  "checkpoint_size_mb": 13.1,
+  "total_training_time_s": 2300.0,
+  "time_per_epoch_s": 92.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 19.4,
+  "throughput_images_per_s": 51.6,
+  "peak_gpu_memory_mb": 470.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

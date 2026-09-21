@@ -1,0 +1,11 @@
+method,task,total_params,trainable_params,checkpoint_size_mb,total_training_time_s,time_per_epoch_s,epochs_completed,latency_ms_per_image,throughput_images_per_s,peak_gpu_memory_mb,input_resolution,batch_size,precision,hardware,note
+kmeans,traditional,0,0,0.0,0.0,0.0,0,185.0,5.4,0.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+fcn,semantic,32957152,32957152,126.1,3900.0,156.0,25,41.2,24.3,1750.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+unet,semantic,17263686,17263686,65.9,2100.0,84.0,25,27.5,36.4,860.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+unetpp,semantic,26900934,26900934,102.6,3450.0,138.0,25,46.1,21.7,1240.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+segnet,semantic,29459782,29459782,112.4,2950.0,118.0,25,31.4,31.8,1180.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+deeplabv3,semantic,39633190,39633190,151.5,4300.0,172.0,25,52.8,18.9,2050.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+pspnet,semantic,46658374,46658374,178.1,4725.0,189.0,25,58.6,17.1,2380.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+segformer,semantic,3714546,3714546,14.3,1775.0,71.0,25,23.7,42.2,540.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+maskrcnn,instance,43918694,43918694,168.0,6600.0,264.0,25,98.5,10.2,3120.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.
+yolo_seg,instance,3405434,3405434,13.1,2300.0,92.0,25,19.4,51.6,470.0,512x512,8,fp32,reference,Reference values; measured numbers replace these on real GPU runs.

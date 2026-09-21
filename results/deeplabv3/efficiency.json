@@ -1,0 +1,18 @@
+{
+  "method": "deeplabv3",
+  "task": "semantic",
+  "total_params": 39633190,
+  "trainable_params": 39633190,
+  "checkpoint_size_mb": 151.5,
+  "total_training_time_s": 4300.0,
+  "time_per_epoch_s": 172.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 52.8,
+  "throughput_images_per_s": 18.9,
+  "peak_gpu_memory_mb": 2050.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

@@ -1,0 +1,23 @@
+# Large downloads and generated data
+data/coco/images/
+data/coco/labels/
+coco2017/
+data/coco/_cache/
+
+# Model checkpoints (add these back to the repo manually once training is done, or reference them from a release)
+checkpoints/*.pt
+checkpoints/*/*.pt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors
+.DS_Store
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/

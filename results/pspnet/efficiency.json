@@ -1,0 +1,18 @@
+{
+  "method": "pspnet",
+  "task": "semantic",
+  "total_params": 46658374,
+  "trainable_params": 46658374,
+  "checkpoint_size_mb": 178.1,
+  "total_training_time_s": 4725.0,
+  "time_per_epoch_s": 189.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 58.6,
+  "throughput_images_per_s": 17.1,
+  "peak_gpu_memory_mb": 2380.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

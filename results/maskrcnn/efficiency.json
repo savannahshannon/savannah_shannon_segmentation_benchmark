@@ -1,0 +1,18 @@
+{
+  "method": "maskrcnn",
+  "task": "instance",
+  "total_params": 43918694,
+  "trainable_params": 43918694,
+  "checkpoint_size_mb": 168.0,
+  "total_training_time_s": 6600.0,
+  "time_per_epoch_s": 264.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 98.5,
+  "throughput_images_per_s": 10.2,
+  "peak_gpu_memory_mb": 3120.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

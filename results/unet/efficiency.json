@@ -1,0 +1,18 @@
+{
+  "method": "unet",
+  "task": "semantic",
+  "total_params": 17263686,
+  "trainable_params": 17263686,
+  "checkpoint_size_mb": 65.9,
+  "total_training_time_s": 2100.0,
+  "time_per_epoch_s": 84.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 27.5,
+  "throughput_images_per_s": 36.4,
+  "peak_gpu_memory_mb": 860.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

@@ -1,0 +1,18 @@
+{
+  "method": "kmeans",
+  "task": "traditional",
+  "total_params": 0,
+  "trainable_params": 0,
+  "checkpoint_size_mb": 0.0,
+  "total_training_time_s": 0.0,
+  "time_per_epoch_s": 0.0,
+  "epochs_completed": 0,
+  "latency_ms_per_image": 185.0,
+  "throughput_images_per_s": 5.4,
+  "peak_gpu_memory_mb": 0.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}

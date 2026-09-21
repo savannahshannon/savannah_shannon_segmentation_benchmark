@@ -1,0 +1,18 @@
+{
+  "method": "segformer",
+  "task": "semantic",
+  "total_params": 3714546,
+  "trainable_params": 3714546,
+  "checkpoint_size_mb": 14.3,
+  "total_training_time_s": 1775.0,
+  "time_per_epoch_s": 71.0,
+  "epochs_completed": 25,
+  "latency_ms_per_image": 23.7,
+  "throughput_images_per_s": 42.2,
+  "peak_gpu_memory_mb": 540.0,
+  "input_resolution": "512x512",
+  "batch_size": 8,
+  "precision": "fp32",
+  "hardware": "reference",
+  "note": "Reference values; measured numbers replace these on real GPU runs."
+}
