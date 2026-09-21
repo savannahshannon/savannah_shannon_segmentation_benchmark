@@ -1,8 +1,5 @@
 # Comprehensive Image Segmentation Benchmarking
 
-**Author:** Savannah Shannon — Ph.D. student, Clark Atlanta University
-**Course:** Computer Science, AI concentration
-
 This repository implements the assignment's full benchmark of 10 image
 segmentation architectures on a common COCO 2017 subset. It contains a
 reusable framework (`src/`), a data-preparation script (`scripts/`),
